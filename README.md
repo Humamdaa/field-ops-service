@@ -75,3 +75,10 @@ This system handles the full lifecycle of service requests, technician managemen
 
 Swagger UI available at:
 http://localhost:3000/docs
+
+---
+
+## 🌱 Seeding Database
+```
+npm run seed
+```

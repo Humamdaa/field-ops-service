@@ -1,22 +1,21 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  app:
+  api:
     build: .
     ports:
       - "3000:3000"
-    env_file:
-      - .env
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/field-ops
     depends_on:
       - mongo
 
   mongo:
     image: mongo:7
-    container_name: field-ops-mongo
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
+      - mongo_data:/data/db
 
 volumes:
-  mongo-data:
+  mongo_data:

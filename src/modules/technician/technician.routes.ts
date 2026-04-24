@@ -3,9 +3,11 @@ import { TechnicianController } from './technician.controller'
 import { createTechnicianSchema, updateLocationSchema, updateStatusSchema, updateTechnicianSchema } from './technician.validator'
 import { validate } from '../../shared/middleware/validate'
 import { validateTechnicianExists } from './validateTechnicianExists.middleware'
+import { TechnicianRepository } from './technician.repository'
 
 const router = express.Router()
-const c = new TechnicianController()
+const repo = new TechnicianRepository()
+const c = new TechnicianController(repo)
 
 /**
  * @openapi

@@ -9,7 +9,6 @@ export const validateTechnicianExists = async (
 ) => {
     const { id } = req.params
 
-    console.log('id is: ', id);
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).json({

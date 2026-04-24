@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket Test</title>
+</head>
+
+<body>
+    <h1>Live Technician Location</h1>
+    <pre id="log"></pre>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script>
+        const socket = io("http://localhost:3000")
+
+        const log = document.getElementById("log")
+
+        socket.on("connect", () => {
+            log.innerText += "Connected: " + socket.id + "\n"
+        })
+
+        socket.on("technician:location:update", (data) => {
+            log.innerText += JSON.stringify(data, null, 2) + "\n\n"
+        })
+    </script>
+</body>
+
+</html>

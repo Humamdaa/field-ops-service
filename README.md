@@ -92,6 +92,7 @@ Create a `.env` file:
 ```env
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/field-ops
+```
 
 ---
 
@@ -103,3 +104,4 @@ This project is fully dockerized. You can run the entire system (API + MongoDB +
 
 ```bash
 docker compose up --build
+```

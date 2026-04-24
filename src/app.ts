@@ -1,19 +1,25 @@
+
 import express from 'express'
+import swaggerUi from 'swagger-ui-express'
+import { swaggerSpec } from './config/swagger'
+
 import technicianRoutes from './modules/technician/technician.routes'
 import serviceRequestRoutes from './modules/serviceRequest/serviceRequest.routes'
-import assignmentRoutes from './modules/assignment/assignment.routes'
-import partnerRoutes from './modules/partner/partner.routes'
 import { errorHandler } from './shared/errors/errorHandler'
 
 const app = express()
 
+// Middlewares
 app.use(express.json())
 
+// Swagger
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+
+// Routes
 app.use('/api/technicians', technicianRoutes)
 app.use('/api/service-requests', serviceRequestRoutes)
-app.use('/api/assignments', assignmentRoutes)
-app.use('/partner/v1', partnerRoutes)
 
+// Error handler (must be last)
 app.use(errorHandler)
 
 export default app

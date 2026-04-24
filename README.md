@@ -92,3 +92,14 @@ Create a `.env` file:
 ```env
 PORT=3000
 MONGO_URI=mongodb://localhost:27017/field-ops
+
+---
+
+## 🐳 Run with Docker
+
+This project is fully dockerized. You can run the entire system (API + MongoDB + seed data) without installing Node.js or MongoDB locally.
+
+### 🚀 Step 1: Build and start containers
+
+```bash
+docker compose up --build

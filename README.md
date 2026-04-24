@@ -75,3 +75,14 @@ This system handles the full lifecycle of service requests, technician managemen
 
 Swagger UI available at:
 http://localhost:3000/docs
+
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file:
+
+```env
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/field-ops

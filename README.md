@@ -74,3 +74,4 @@ This system handles the full lifecycle of service requests, technician managemen
 ## 📑 API Documentation
 
 Swagger UI available at:
+http://localhost:3000/docs

@@ -82,3 +82,13 @@ http://localhost:3000/docs
 ```
 npm run seed
 ```
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file:
+
+```env
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/field-ops
